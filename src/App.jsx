@@ -1,18 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import navLinksData from "./data.json";
+import Header from './components/header';
+import Drop_dn from './components/drop_dn';
+import HorizontalScrollContainer from './components/scroll';
+import Bottom_header from './components/bottom_header';
+import Bottom from './components/bottom';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App=()=> {
   return (
-    <>
-      <div>
-        Hello 
+    <div className='App'>
+      <Header/>
+      <div className='header-parent'>
+        <div className='header'>
+          <Drop_dn navLinksData={navLinksData} />
+        </div>
       </div>
-    </>
-  )
+      <HorizontalScrollContainer/>
+      <Bottom_header/>
+      <Bottom/>
+    </div>
+  );
 }
 
-export default App
+export default App;
